@@ -1,0 +1,1146 @@
+/* -------------------------------------
+-------------GLOBALES-------------------
+---------------------------------------- */
+
+/* html {
+    scroll-behavior: smooth;
+} */
+
+.fuente1 {
+  font-family: "Bebas Neue", cursive;
+}
+
+.fuente2 {
+  font-family: "Indie Flower", cursive;
+}
+
+.fuente3 {
+  font-family: "Palette Mosaic", cursive;
+}
+
+.fuente4 {
+  font-family: "Luckiest Guy", cursive;
+}
+
+.fuente5 {
+  font-family: "Klee One", cursive;
+}
+
+.fuente6 {
+  font-family: "Fredoka One", cursive;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.centrado {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a:visited,
+a:link,
+a:focus,
+a:hover,
+a:active {
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 1px solid black;
+}
+
+.padinear {
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}
+
+.negrita {
+  font-weight: 900;
+}
+
+.raton:hover {
+  cursor: pointer;
+}
+
+.fa-plus-circle {
+  transition: all 0.1s;
+}
+
+.fa-plus-circle:hover {
+  font-size: 30px !important;
+  /* color: #36ca5b !important; */
+}
+
+/* ESTILOS EN PANTALLA GRANDE Y GENERALES */
+
+/* =========================================
+                    HEADER
+============================================ */
+
+.headersito {
+  position: fixed;
+  top: 0%;
+  z-index: 10;
+  background-color: rgba(100%, 100%, 100%, 20%);
+  transition: all 0.5s;
+}
+
+.grid-header {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+}
+
+.item-header {
+  height: 95px;
+}
+.item-header button {
+  background-color: black;
+}
+
+.grid-header .item-header:nth-child(2) {
+  line-height: 1;
+  padding-top: 18px;
+  padding-left: 5px;
+}
+
+.grid-header .item-header p:nth-child(1) {
+  font-size: 35px;
+}
+
+.grid-header .item-header p:nth-child(2) {
+  font-size: 25px;
+}
+
+.grid-header .item-header:nth-child(3) button,
+.grid-header .item-header:nth-child(4) button,
+.grid-header .item-header:nth-child(5) button {
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+.grid-header .item-header:nth-child(6) button {
+  margin-top: 18px;
+}
+
+.grid-header .item-header:nth-child(7) {
+   
+}
+
+.grid-header .item-header:nth-child(8) i {
+  font-size: 60px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  color: black;
+}
+
+/* =========================================
+                    BANNER
+============================================ */
+
+.banner .imagenizando {
+  height: 680px;
+}
+
+.banner .imagenizando .imagenizando-item {
+  position: relative;
+  height: 680px;
+}
+
+.banner .imagenizando .imagenizando-item p {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 40px;
+  transform: translate(-50%, 0%);
+  color: white;
+}
+
+.banner .imagenizando .imagenizando-item button {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  font-size: 35px;
+  transform: translate(-50%, 0%);
+}
+
+.animated {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.animated:hover {
+  background: #16aa56;
+  animation-name: shake;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+/* =========================================
+                    MENU
+============================================ */
+
+.sobre-llamita {
+  padding-top: 25px;
+}
+
+.grid-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 200px;
+}
+
+.grid-start .inicia-con {
+  font-size: 30px;
+  margin-top: 5px !important;
+}
+
+.grid-start .google {
+  font-size: 30px;
+  width: 200px;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid white;
+}
+
+.grid-start .google:hover {
+  font-family: "Luckiest Guy", cursive;
+}
+
+.grid-start .facebook,
+.grid-start .bloger {
+  font-size: 30px;
+  color: white;
+  width: 200px;
+  border-radius: 8px;
+  border: 1px solid white;
+}
+
+.grid-start .facebook:hover,
+.grid-start .bloger:hover {
+  font-family: "Luckiest Guy", cursive;
+}
+
+.frasesita {
+  font-size: 35px !important;
+}
+
+/* =========================================
+                    TOP TOURS
+============================================ */
+
+.primer-top {
+  width: 50%;
+  height: 820px;
+  box-shadow: 5px 5px 15px #777777;
+}
+
+.second-top {
+  width: 50%;
+  height: 820px;
+  box-shadow: 5px 5px 15px #777777;
+}
+
+.top1 {
+  height: 60%;
+  background-size: cover;
+  background-position: top left;
+  transition: all 0.8s;
+  border: 7px solid white;
+}
+
+.top1:hover {
+  background-position: bottom right;
+}
+
+.iner-top1 {
+  height: 80px;
+  color: white;
+  background-color: rgba(0%, 0%, 0%, 50%);
+}
+
+.top2 {
+  height: 40%;
+  background-size: cover;
+  background-position: left center;
+  transition: all 0.8s;
+  border: 7px solid white;
+}
+
+.top2:hover {
+  background-position: right bottom;
+}
+
+.top3 {
+  height: 40%;
+  background-size: cover;
+  background-position: top left;
+  transition: all 0.8s;
+  border: 7px solid white;
+}
+
+.top3:hover {
+  background-position: bottom right;
+}
+
+.top4 {
+  height: 60%;
+  background-size: cover;
+  background-position: top right;
+  transition: all 0.8s;
+  border: 7px solid white;
+}
+
+.top4:hover {
+  background-position: bottom left;
+}
+
+.subtop {
+  width: 50%;
+  height: 350px;
+  border: 7px solid white;
+  transition: all 1s;
+  box-shadow: 5px 5px 15px #777777;
+}
+
+.subtop1 {
+  background-position: left top;
+  background-size: cover;
+}
+
+.subtop1:hover {
+  background-position: bottom;
+}
+
+.subtop2 {
+  background-position: left top;
+  background-size: cover;
+}
+
+.subtop2:hover {
+  background-position: right;
+}
+
+.fa-star {
+  color: #f5d208;
+}
+
+/* =========================================
+                    ESPECIAL TOURS
+============================================ */
+
+.grid-especial {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.grid-especial .item-especial {
+  /* border: 1px solid black; */
+  border-radius: 15px;
+  background-size: cover;
+  height: 360px;
+  box-shadow: 5px 5px 15px #777777;
+  position: relative;
+}
+
+.info-especial {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(0%, 0%, 0%, 50%);
+  height: 110px;
+  color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+@keyframes anim {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: center;
+  }
+  50% {
+    background-position: right;
+  }
+}
+
+.panorama {
+  animation-name: anim;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+
+/* =========================================
+                    TESTIMONIALS
+============================================ */
+
+.grid-testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+.item-testimonials {
+  background-color: black;
+  /* border: 1px solid white; */
+  height: 470px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 7px 7px 15px #777777;
+  transition: all 2s;
+  cursor: pointer;
+}
+
+.grid-testimonials .item-testimonials .el-testimonio {
+  display: none;
+  height: 400px;
+}
+
+.contenido-testificado {
+  transform: rotateY(-180deg);
+  font-size: 20px;
+  line-height: 1.16;
+  text-align: justify;
+}
+
+.item-testimonials .foto-testi {
+  background-size: cover;
+  background-position: left;
+  height: 400px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* =========================================
+                    REDES SOCIALES
+============================================ */
+
+.grid-redes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-redes .item-redes {
+  height: 50px;
+}
+
+.grid-redes .item-redes i {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.grid-redes .item-redes:nth-child(1) i {
+  color: #5d88d8;
+}
+
+.grid-redes .item-redes:nth-child(2) i {
+  color: #f01111;
+}
+
+.grid-redes .item-redes:nth-child(3) i {
+  color: #af7a09;
+}
+
+/* -------------------------------------
+-------TABLET HORIZONTAL LG 1024px------
+---------------------------------------- */
+
+.Tablet {
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  /* =========================================
+                    HEADER
+============================================ */
+  .grid-header {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  }
+  .item-header {
+    height: 95px;
+  }
+  .grid-header .item-header:nth-child(1) img {
+    margin-top: 8px;
+  }
+  .grid-header .item-header:nth-child(2) {
+    line-height: 1;
+    padding-top: 18px;
+    padding-left: 5px;
+  }
+  .grid-header .item-header p:nth-child(1) {
+    font-size: 35px;
+  }
+  .grid-header .item-header p:nth-child(2) {
+    font-size: 25px;
+  }
+  .grid-header .item-header:nth-child(3) button,
+  .grid-header .item-header:nth-child(4) button,
+  .grid-header .item-header:nth-child(5) button {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+  .grid-header .item-header:nth-child(6) button {
+    margin-top: 19px;
+    padding: 5px;
+  }
+  .grid-header .item-header:nth-child(7) {
+    padding-top: 5px;
+  }
+  .grid-header .item-header:nth-child(7) button:nth-child(1) {
+    margin-bottom: 8px;
+  }
+  .grid-header .item-header:nth-child(8) i {
+    font-size: 60px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  /* =========================================
+                    BANNER
+============================================ */
+  .banner .imagenizando {
+    height: 500px;
+  }
+  .banner .imagenizando .imagenizando-item {
+    position: relative;
+    height: 500px;
+  }
+  .banner .imagenizando .imagenizando-item p {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    font-size: 30px;
+    transform: translate(-50%, 0%);
+    color: white;
+  }
+  .banner .imagenizando .imagenizando-item button {
+    position: absolute;
+    left: 50%;
+    bottom: 13%;
+    font-size: 30px;
+    transform: translate(-50%, 0%);
+  }
+  /* =========================================
+                    ESPECIAL TOURS
+============================================ */
+  .grid-especial {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  /* =========================================
+                   TESTIMONIALS
+============================================ */
+  .contenido-testificado {
+    transform: rotateY(-180deg);
+    font-size: 18px;
+    line-height: 1.45;
+    text-align: justify;
+  }
+}
+
+/* -------------------------------------
+-------TABLET VERTICAL MD 768px---------
+---------------------------------------- */
+
+.Tablet2 {
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  /* =========================================
+                    HEADER
+============================================ */
+  .grid-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  }
+  .item-header {
+    height: 95px;
+  }
+  .grid-header .item-header:nth-child(1) img {
+    margin-top: 2px;
+  }
+  .grid-header .item-header:nth-child(2) {
+    line-height: 1;
+    padding-top: 21px;
+    padding-left: 0px;
+  }
+  .grid-header .item-header p:nth-child(1) {
+    font-size: 32px;
+  }
+  .grid-header .item-header p:nth-child(2) {
+    font-size: 22px;
+  }
+  .grid-header .item-header:nth-child(3) button,
+  .grid-header .item-header:nth-child(4) button,
+  .grid-header .item-header:nth-child(5) button {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+  .grid-header .item-header:nth-child(6) {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .grid-header .item-header:nth-child(6) button {
+    margin-top: 25px;
+    padding: 0px;
+  }
+  .grid-header .item-header:nth-child(7) {
+    padding-top: 5px;
+  }
+  .grid-header .item-header:nth-child(7) button:nth-child(1) {
+    margin-bottom: 8px;
+  }
+  .grid-header .item-header:nth-child(8) i {
+    font-size: 60px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  /* =========================================
+                    BANNER
+============================================ */
+  .banner .imagenizando {
+    height: 500px;
+  }
+  .banner .imagenizando .imagenizando-item {
+    position: relative;
+    height: 500px;
+  }
+  .banner .imagenizando .imagenizando-item p {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    font-size: 30px;
+    transform: translate(-50%, 0%);
+    color: white;
+  }
+  .banner .imagenizando .imagenizando-item button {
+    position: absolute;
+    left: 50%;
+    bottom: 13%;
+    font-size: 30px;
+    transform: translate(-50%, 0%);
+  }
+  /* =========================================
+                    MENU
+============================================ */
+  .sobre-llamita {
+    padding-top: 25px;
+  }
+  .grid-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 200px;
+  }
+  .grid-start .inicia-con {
+    font-size: 30px;
+    margin-top: 5px !important;
+  }
+  .grid-start .google {
+    font-size: 30px;
+    width: 200px;
+  }
+  .grid-start .facebook {
+    font-size: 30px;
+    width: 200px;
+  }
+  .frasesita {
+    font-size: 25px !important;
+    padding-top: 40px;
+  }
+  /* =========================================
+                    TOP TOURS
+============================================ */
+  .primer-top {
+    width: 50%;
+    height: 650px;
+  }
+  .second-top {
+    width: 50%;
+    height: 650px;
+  }
+  .iner-top1 h4 {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  .iner-top1 .precioso {
+    font-size: 15px !important;
+  }
+  .iner-top1 .fa-dollar-sign {
+    font-size: 13px !important;
+  }
+  .subtop {
+    width: 50%;
+    height: 180px;
+  }
+  /* =========================================
+                    ESPECIAL TOURS
+============================================ */
+  .grid-especial {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  /* =========================================
+                   TESTIMONIALS
+============================================ */
+  .grid-testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  .item-testimonials {
+    background-color: black;
+    /* border: 1px solid white; */
+    height: 370px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 7px 7px 15px #777777;
+    transition: all 2s;
+    cursor: pointer;
+  }
+  .item-testimonials .foto-testi {
+    height: 300px;
+  }
+  .grid-testimonials .item-testimonials .el-testimonio {
+    height: 300px;
+  }
+  .contenido-testificado {
+    transform: rotateY(-180deg);
+    font-size: 18px;
+    line-height: 1.25;
+    text-align: justify;
+  }
+}
+
+/* -------------------------------------
+-------MOVIL HORIZONTAL SM 576px--------
+---------------------------------------- */
+
+.Phone {
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+  /* =========================================
+                    HEADER
+============================================ */
+  .grid-header {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  }
+  .dmr {
+    margin-right: 10px;
+  }
+  .item-header {
+    height: 95px;
+  }
+  .grid-header .item-header:nth-child(1) img {
+    margin-top: 13px;
+  }
+  .grid-header .item-header:nth-child(2) {
+    line-height: 1;
+    padding-top: 28px;
+    padding-left: 0px;
+  }
+  .grid-header .item-header p:nth-child(1) {
+    font-size: 25px;
+  }
+  .grid-header .item-header p:nth-child(2) {
+    font-size: 15px;
+  }
+  .grid-header .item-header:nth-child(3) button,
+  .grid-header .item-header:nth-child(4) button,
+  .grid-header .item-header:nth-child(5) button {
+    font-size: 12px;
+    margin-top: 33px;
+  }
+  .grid-header .item-header:nth-child(6) {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .grid-header .item-header:nth-child(6) button {
+    font-size: 12px;
+    margin-top: 25px;
+    padding: 0px;
+  }
+  .grid-header .item-header:nth-child(7) {
+    padding-top: 12px;
+  }
+  .grid-header .item-header:nth-child(7) button:nth-child(1) {
+    margin-bottom: 8px;
+  }
+  .grid-header .item-header:nth-child(7) button {
+    font-size: 12px;
+  }
+  .grid-header .item-header:nth-child(8) i {
+    font-size: 35px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  /* =========================================
+                    BANNER
+============================================ */
+  .banner .imagenizando {
+    height: 300px;
+  }
+  .banner .imagenizando .imagenizando-item {
+    position: relative;
+    height: 300px;
+  }
+  .banner .imagenizando .imagenizando-item p {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    font-size: 18px;
+    transform: translate(-50%, 0%);
+    color: white;
+  }
+  .banner .imagenizando .imagenizando-item button {
+    position: absolute;
+    left: 50%;
+    bottom: 18%;
+    font-size: 18px;
+    transform: translate(-50%, 0%);
+  }
+  /* =========================================
+                    MENU
+============================================ */
+  .sobre-llamita {
+    padding-top: 25px;
+  }
+  .grid-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 200px;
+  }
+  .grid-start .inicia-con {
+    font-size: 30px;
+    margin-top: 5px !important;
+  }
+  .grid-start .google {
+    font-size: 25px;
+    width: 150px;
+  }
+  .grid-start .facebook {
+    font-size: 25px;
+    width: 150px;
+  }
+  .frasesita {
+    font-size: 20px !important;
+    padding-top: 45px;
+  }
+  /* =========================================
+                    TOP TOURS
+============================================ */
+  .primer-top {
+    width: 50%;
+    height: 570px;
+  }
+  .second-top {
+    width: 50%;
+    height: 570px;
+  }
+  .iner-top1 h4 {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+  .iner-top1 .precioso {
+    font-size: 15px !important;
+  }
+  .iner-top1 .fa-dollar-sign {
+    font-size: 13px !important;
+  }
+  .subtop {
+    width: 50%;
+    height: 250px;
+  }
+  /* =========================================
+                    ESPECIAL TOURS
+============================================ */
+  .grid-especial {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  /* =========================================
+                   TESTIMONIALS
+============================================ */
+  .grid-testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  .item-testimonials {
+    background-color: black;
+    /* border: 1px solid white; */
+    height: 370px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 7px 7px 15px #777777;
+    transition: all 2s;
+    cursor: pointer;
+  }
+  .item-testimonials .foto-testi {
+    height: 300px;
+  }
+  .grid-testimonials .item-testimonials .el-testimonio {
+    height: 300px;
+  }
+  .contenido-testificado {
+    transform: rotateY(-180deg);
+    font-size: 15px;
+    line-height: 1.25;
+    text-align: justify;
+  }
+}
+
+/*--------------------------------------
+------- MOVIL VERTICAL 320px------------
+---------------------------------------- */
+
+.Phone1 {
+}
+
+@media (max-width: 575px) {
+  /* =========================================
+                    HEADER
+============================================ */
+  .grid-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  .item-header {
+    height: 95px;
+  }
+  .grid-header .item-header:nth-child(1) img {
+    margin-top: 10px;
+    width: 80px;
+  }
+  .grid-header .item-header:nth-child(2) {
+    line-height: 1;
+    padding-top: 25px;
+    padding-left: 0px;
+  }
+  .grid-header .item-header p:nth-child(1) {
+    font-size: 28px;
+  }
+  .grid-header .item-header p:nth-child(2) {
+    font-size: 18px;
+  }
+  .grid-header .item-header:nth-child(8) i {
+    font-size: 60px;
+    margin-top: 17px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  /* =========================================
+                    BANNER
+============================================ */
+  .banner .imagenizando {
+    height: 500px;
+  }
+  .banner .imagenizando .imagenizando-item {
+    position: relative;
+    height: 500px;
+  }
+  .banner .imagenizando .imagenizando-item p {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    font-size: 20px;
+    transform: translate(-50%, 0%);
+    color: white;
+  }
+  .banner .imagenizando .imagenizando-item button {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    font-size: 20px;
+    transform: translate(-50%, 0%);
+  }
+  /* =========================================
+                    MENU
+============================================ */
+  .sobre-llamita {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .grid-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+  }
+  .grid-start .inicia-con {
+    font-size: 25px;
+    margin-top: 5px !important;
+  }
+  .grid-start .google {
+    font-size: 25px;
+    width: 200px;
+  }
+  .grid-start .facebook {
+    font-size: 25px;
+    width: 200px;
+  }
+  .frasesita {
+    font-size: 20px !important;
+    /* padding-top: 55px; */
+  }
+  /* =========================================
+                    TOP TOURS
+============================================ */
+  .primer-top {
+    width: 100%;
+    height: auto;
+  }
+  .second-top {
+    width: 100%;
+    height: auto;
+  }
+  .top1 {
+    height: 250px;
+    background-size: cover;
+    background-position: top left;
+    cursor: pointer;
+    transition: all 0.8s;
+    border: 7px solid white;
+  }
+  .iner-top1 h4 {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  .top2 {
+    height: 250px;
+    background-size: cover;
+    background-position: left center;
+    cursor: pointer;
+    transition: all 0.8s;
+    border: 7px solid white;
+  }
+  .top3 {
+    height: 250px;
+    background-size: cover;
+    background-position: bottom left;
+    cursor: pointer;
+    transition: all 0.8s;
+    border: 7px solid white;
+  }
+  .top4 {
+    height: 250px;
+    background-size: cover;
+    background-position: top right;
+    cursor: pointer;
+    transition: all 0.8s;
+    border: 7px solid white;
+  }
+  .subtop {
+    width: 100%;
+    height: 250px;
+  }
+  /* =========================================
+                    ESPECIAL TOURS
+============================================ */
+  .grid-especial {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  /* =========================================
+                   TESTIMONIALS
+============================================ */
+  .grid-testimonials {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  .item-testimonials {
+    background-color: black;
+    /* border: 1px solid white; */
+    height: 370px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 7px 7px 15px #777777;
+    transition: all 2s;
+    cursor: pointer;
+  }
+  .item-testimonials .foto-testi {
+    height: 300px;
+  }
+  .grid-testimonials .item-testimonials .el-testimonio {
+    height: 300px;
+  }
+  .contenido-testificado {
+    transform: rotateY(-180deg);
+    font-size: 16px;
+    line-height: 1.35;
+    text-align: justify;
+  }
+  /* =========================================
+                   FOOTER
+============================================ */
+  footer h5 {
+    font-size: 10px;
+  }
+}

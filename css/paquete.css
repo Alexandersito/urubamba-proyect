@@ -1,0 +1,639 @@
+/* -------------------------------------
+-------------GLOBALES-------------------
+---------------------------------------- */
+
+
+/* html {
+    scroll-behavior: smooth;
+} */
+
+
+/* * {
+    font-family: 'Noto Serif JP', serif;
+} */
+
+.fuente1 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.fuente2 {
+    font-family: 'Indie Flower', cursive;
+}
+
+.fuente3 {
+    font-family: 'Palette Mosaic', cursive;
+}
+
+.fuente4 {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a:visited,
+a:link,
+a:focus,
+a:hover,
+a:active {
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #000000;
+    border: 1px solid black;
+}
+
+.padinear {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+.negrita {
+    font-weight: 900;
+}
+
+.raton:hover {
+    cursor: pointer;
+}
+
+.fa-plus-circle {
+    transition: all .1s;
+}
+
+.fa-plus-circle:hover {
+    font-size: 30px !important;
+    /* color: #36ca5b !important; */
+}
+
+
+/* ESTILOS EN PANTALLA GRANDE Y GENERALES */
+
+
+/* =========================================
+                    HEADER
+============================================ */
+
+.header-secondary {
+    border-bottom: 1px solid black;
+}
+
+
+/* =========================================
+                INFO PAQUETE 
+============================================ */
+
+.grid-info-paquete {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tamanioA {
+    box-shadow: 7px 7px 15px #777777;
+}
+
+.tamanioA,
+.tamanioB,
+.tamanioC {
+    height: 600px !important;
+    border-radius: 15px !important;
+}
+
+.photo-animation {
+    transition: all 5s !important;
+    cursor: pointer;
+}
+
+.photo-animation:hover {
+    background-position: right !important;
+    transform: scale(1.2) !important;
+}
+
+.grid-include {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================================
+                    CARRITO
+============================================ */
+
+.carrito {
+    width: 300px !important;
+}
+
+.grid-carrito {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+}
+
+
+/* =========================================
+                    ABOUT US
+============================================ */
+
+.grid-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.grid-about .item-about {
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px #777777;
+}
+
+
+/* =========================================
+                    USERS
+============================================ */
+
+.grid-user {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.grid-user .item-user {
+    /* background-color: gray; */
+    box-shadow: 7px 0px 7px gray;
+}
+
+.grid-user .item-user .grid-user-tours {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.grid-user .item-user .grid-user-tours .item-user-tours {
+    background-color: rgb(112, 231, 132);
+    border: 1px solid rgb(0, 0, 0);
+}
+
+
+/* =========================================
+                    USER TESTIMONIO
+============================================ */
+
+.grid-testimony {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+
+/* =========================================
+                    BLOG
+============================================ */
+
+.grid-vidios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 50px;
+}
+
+.item-vidios {
+    /* border: 1px solid black; */
+    box-shadow: 7px 10px 7px 7px rgb(109, 109, 109);
+    background-color: black;
+}
+
+.item-vidios iframe {
+    margin: 0px !important;
+    padding: 0px !important;
+    height: 350px;
+}
+
+
+/* =========================================
+                    IMPUTS
+============================================ */
+
+.formulario__label {
+    display: block;
+    font-weight: 900;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.formulario__grupo-input {
+    position: relative;
+    width: 200px;
+}
+
+.formulario__input {
+    width: 200px;
+    background: #fff;
+    border: 3px solid black;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+    font-family: 'Klee One', cursive;
+}
+
+.formulario__input:focus {
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 10px rgba(163, 163, 163, 0.4);
+}
+
+.formulario__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    width: 50%;
+    display: none;
+}
+
+.formulario__input-error-activo {
+    display: block;
+}
+
+.formulario__validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.formulario__checkbox {
+    margin-right: 10px;
+}
+
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+    grid-column: span 2;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.formulario__btn {
+    height: 45px;
+    line-height: 45px;
+    width: 40%;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+    font-family: 'Klee One', cursive;
+}
+
+.formulario__btn:hover {
+    box-shadow: 3px 0px 10px rgba(163, 163, 163, 1);
+}
+
+.formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+}
+
+
+/* 
+============================================
+*/
+
+.grid-advertencia-sesion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* -------------------------------------
+-------TABLET HORIZONTAL LG 1024px------
+---------------------------------------- */
+
+.Tablet {}
+
+@media(max-width:1199px) and (min-width:992px) {
+    /* =========================================
+                    INFO-PAQUETE
+============================================ */
+    .tamanioA,
+    .tamanioB,
+    .tamanioC {
+        height: 500px !important;
+    }
+    .itinerario-paquete {
+        font-size: 14px;
+    }
+    /* =========================================
+                    ABOUT
+============================================ */
+    .grid-about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    /* =========================================
+                    USERS
+============================================ */
+    .grid-user .item-user:nth-child(2) p,
+    .grid-user .item-user:nth-child(3) p,
+    .grid-user .item-user:nth-child(4) p {
+        font-size: 15px !important;
+    }
+    /* =========================================
+                   TESTIMONIALS
+============================================ */
+}
+
+
+/* -------------------------------------
+-------TABLET VERTICAL MD 768px---------
+---------------------------------------- */
+
+.Tablet2 {}
+
+@media(max-width:991px) and (min-width:768px) {
+    /* =========================================
+                    INFO-PAQUETE
+============================================ */
+    .tamanioA,
+    .tamanioB,
+    .tamanioC {
+        height: 400px !important;
+    }
+    .itinerario-paquete {
+        font-size: 11px;
+    }
+    /* =========================================
+                    ABOUT
+============================================ */
+    .grid-about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    /* =========================================
+                    USERS
+============================================ */
+    .grid-user .item-user:nth-child(2) p,
+    .grid-user .item-user:nth-child(3) p,
+    .grid-user .item-user:nth-child(4) p {
+        font-size: 12px !important;
+    }
+    /* =========================================
+                   BLOG
+============================================ */
+    .grid-vidios {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+    .item-vidios iframe {
+        height: 450px;
+    }
+    /* =========================================
+                    ESPECIAL TOURS
+============================================ */
+    /* =========================================
+                   TESTIMONIALS
+============================================ */
+}
+
+
+/* -------------------------------------
+-------MOVIL HORIZONTAL SM 576px--------
+---------------------------------------- */
+
+.Phone {}
+
+@media(max-width:767px) and (min-width:576px) {
+    /* =========================================
+                    INFO-PAQUETE
+============================================ */
+    .grid-info-paquete {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .tamanioA,
+    .tamanioB,
+    .tamanioC {
+        height: 300px !important;
+    }
+    .itinerario-paquete {
+        font-size: 14px;
+    }
+    /* =========================================
+                    CARRITO
+============================================ */
+    .grid-carrito {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /* =========================================
+                    ABOUT
+============================================ */
+    .grid-about {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .grid-about .item-about {
+        height: 268px;
+    }
+    .grid-about .item-about:nth-child(4) {
+        width: 50%;
+    }
+    /* =========================================
+                    USERS
+============================================ */
+    .grid-user .item-user:nth-child(2) p,
+    .grid-user .item-user:nth-child(3) p,
+    .grid-user .item-user:nth-child(4) p {
+        font-size: 10px !important;
+    }
+    .grid-user .item-user:nth-child(5) button {
+        font-size: 10px;
+    }
+    /* =========================================
+                    USER TESTIMONIO
+============================================ */
+    .grid-testimony {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+    /* =========================================
+                   BLOG
+============================================ */
+    .grid-vidios {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+    .item-vidios iframe {
+        height: 320px;
+    }
+}
+
+
+/*--------------------------------------
+------- MOVIL VERTICAL 320px------------
+---------------------------------------- */
+
+.Phone1 {}
+
+@media(max-width:575px) {
+    /* =========================================
+                    INFO PAQUETE
+============================================ */
+    .grid-info-paquete {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .tamanioA,
+    .tamanioB,
+    .tamanioC {
+        height: 400px !important;
+    }
+    .itinerario-paquete {
+        font-size: 12px;
+    }
+    /* =========================================
+                    CARRITO
+============================================ */
+    .grid-carrito {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    /* =========================================
+                    ABOUT
+============================================ */
+    .grid-about {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .grid-about .item-about {
+        height: 436px;
+    }
+    .grid-about .item-about:nth-child(4) {
+        width: auto;
+    }
+    /* =========================================
+                    USERS
+============================================ */
+    .grid-user {
+        display: grid;
+        grid-template-columns: 1fr;
+        border: 5px solid black;
+        border-radius: 10px;
+    }
+    .grid-user .item-user:nth-child(2),
+    .grid-user .item-user:nth-child(3),
+    .grid-user .item-user:nth-child(4),
+    .grid-user .item-user:nth-child(5) {
+        /* background-color: gray; */
+        /* box-shadow: 7px 0px 7px gray; */
+        height: 65px;
+    }
+    /* =========================================
+                    USER TESTIMONIO
+============================================ */
+    .grid-testimony {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 20px;
+    }
+    /* =========================================
+                   BLOG
+============================================ */
+    .grid-vidios {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+    .item-vidios iframe {
+        height: 200px;
+    }
+    /* =========================================
+                   FORMULARIO INPUTS
+============================================ */
+    .formulario__input-error {
+        width: 100%;
+        /* display: none; */
+    }
+}
