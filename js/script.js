@@ -43,7 +43,7 @@ $(".headersito .agora a").click(function(e) {
 // Anclas top
 $(".ancla-top  a").click(function(e) {
 
-    e.preventDefault();
+    // e.preventDefault();
 
     var vinculo = $(this).attr("href");
 
