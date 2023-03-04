@@ -101,6 +101,31 @@ body::-webkit-scrollbar-thumb {
   /* color: #36ca5b !important; */
 }
 
+.btn-success:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* SWEET ALERT STYLES */
+.swal2-confirm {
+  background-color: #000000 !important; 
+  color: #fff; 
+  border-color: #000000 !important; 
+  width: 200px;
+}
+
+.swal2-confirm:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+.swal2-confirm:hover {
+  background-color: #70e453 !important; 
+  border-color: #000000 !important;
+}
+
+
 /* ESTILOS EN PANTALLA GRANDE Y GENERALES */
 
 /* =========================================
@@ -111,7 +136,7 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   top: 0%;
   z-index: 10;
-  background-color: rgba(100%, 100%, 100%, 20%);
+  background-color: rgba(100%, 100%, 100%, 35%);
   transition: all 0.5s;
 }
 
@@ -190,8 +215,9 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   left: 50%;
   bottom: 10%;
-  font-size: 35px;
+  font-size: 25px;
   transform: translate(-50%, 0%);
+  background-color: white;
 }
 
 .animated {
@@ -1015,7 +1041,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     left: 50%;
     bottom: 10%;
-    font-size: 20px;
+    font-size: 10px;
     transform: translate(-50%, 0%);
   }
   /* =========================================

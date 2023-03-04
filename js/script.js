@@ -7,7 +7,7 @@ var urlServidor = $("#urlServidor").val();
 var ancho = $(".imagenizando").height()
 console.log("ancho " + ancho);
 
-$(window).scroll(function(event) {
+$(window).scroll(function (event) {
 
     var scrollTop = $(window).scrollTop();
     console.log("Vertical " + scrollTop);
@@ -16,7 +16,7 @@ $(window).scroll(function(event) {
         $(".header-principal").css({ "background": "white" })
         $(".header-principal").css({ "border-bottom": "1px solid black" })
     } else {
-        $(".header-principal").css({ "background": "rgba(100%, 100%, 100%, 40%)" })
+        $(".header-principal").css({ "background": "rgba(100%, 100%, 100%, 35%)" })
         $(".header-principal").css({ "border-bottom": "none" })
     }
 });
@@ -26,7 +26,7 @@ $(window).scroll(function(event) {
 // TIRANDO ANCLAS
 // =============================================
 // Anclas del header
-$(".headersito .agora a").click(function(e) {
+$(".headersito .agora a").click(function (e) {
 
     e.preventDefault();
 
@@ -41,7 +41,7 @@ $(".headersito .agora a").click(function(e) {
 })
 
 // Anclas top
-$(".ancla-top  a").click(function(e) {
+$(".ancla-top  a").click(function (e) {
 
     // e.preventDefault();
 
@@ -60,13 +60,13 @@ $(".ancla-top  a").click(function(e) {
 // =============================================
 var testimonios = $(".item-testimonials")
 var testi = $(".item-testimonials .el-testimonio")
-$(".item-testimonials").click(function() {
+$(".item-testimonials").click(function () {
     var actual = $(this)
     var hijoItemTesti = $(this).children("div").children("div")
     $(this).css({ "transform": "rotateY(180deg)" })
     $(hijoItemTesti).css({ "display": "block" })
 
-    setTimeout(function() {
+    setTimeout(function () {
         actual.css({ "transform": "rotateY(0deg)" })
         $(hijoItemTesti).css({ "display": "none" })
     }, 10000);
@@ -74,6 +74,23 @@ $(".item-testimonials").click(function() {
 })
 
 
-$('.myTours').click(function() {
+$('.myTours').click(function () {
     $('.contendorResers').toggle();
 })
+
+//===============================================
+// ANIMACION DEL BOTON DEL CARRITO DE COMPRAS
+//===============================================
+document.getElementById("miBoton").addEventListener("click", function () {
+    var boton = document.getElementById("miBoton");
+    var ancho = boton.offsetWidth; //Obtener el ancho del botón
+    boton.style.backgroundColor = "purple";
+    boton.style.color = "white";
+    boton.style.width = ancho + "px"; //Establecer el ancho del botón
+    boton.textContent = "¡ADDED!";
+    boton.style.transition = "background-color 1s ease, color 1s ease";
+});
+
+
+
+

@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     $('#WABoton').floatingWhatsApp({
         phone: '+51984510591', // Número WhatsApp Business 
         popupMessage: 'Hi 👋 how can we help you?', // Mensaje pop up
@@ -57,7 +57,7 @@ class Carrito {
 
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
-        productosLS.forEach(function(productoLS) {
+        productosLS.forEach(function (productoLS) {
             if (productoLS.id === infoProducto.id) {
                 productosLS = productoLS.id;
             }
@@ -88,7 +88,7 @@ class Carrito {
         }
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
-        productosLS.forEach(function(productoLS) {
+        productosLS.forEach(function (productoLS) {
             if (productoLS.id === infoProducto.id) {
                 productosLS = productoLS.id;
             }
@@ -180,7 +180,7 @@ class Carrito {
         //Obtenemos el arreglo de productos
         productosLS = this.obtenerProductosLocalStorage();
         //Comparar el id del producto borrado con LS
-        productosLS.forEach(function(productoLS, index) {
+        productosLS.forEach(function (productoLS, index) {
             if (productoLS.id === productoID) {
                 productosLS.splice(index, 1);
             }
@@ -194,7 +194,7 @@ class Carrito {
     leerLocalStorage() {
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
-        productosLS.forEach(function(producto) {
+        productosLS.forEach(function (producto) {
             //Construir plantilla
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -226,3 +226,14 @@ class Carrito {
         });
     }
 }
+
+//===============================================
+// RESERVAR - SWEET ALERT
+//===============================================
+document.getElementById("reservar").addEventListener("click", function () {
+    Swal.fire({
+        icon: 'success',
+        title: 'Reserva exitosa',
+        text: 'Se ha completado la operación con éxito.',
+    });
+});

@@ -119,13 +119,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .photo-animation {
-    transition: all 5s !important;
+    transition: all 2.5s !important;
     cursor: pointer;
 }
 
 .photo-animation:hover {
     background-position: right !important;
-    transform: scale(1.2) !important;
 }
 
 .grid-include {
@@ -133,6 +132,10 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: 1fr 1fr;
 }
 
+.btn-success:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 
 /* =========================================
                     CARRITO
