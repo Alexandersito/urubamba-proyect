@@ -237,3 +237,7 @@ document.getElementById("reservar").addEventListener("click", function () {
         text: 'Se ha completado la operación con éxito.',
     });
 });
+
+
+
+

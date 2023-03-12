@@ -1,5 +1,56 @@
 var urlPrincipal = $("#urlPrincipal").val();
 var urlServidor = $("#urlServidor").val();
+
+// =============================================
+
+function addToCart(productId) {
+    var product = document.getElementById(productId);
+    var productName = product.querySelector('h2').innerText;
+    var productPrice = product.querySelector('.price').innerText;
+    var productImage = product.querySelector('img').src;
+
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // Verificar si el producto ya existe en el carrito
+    var productExists = cart.some(function (item) {
+        return item.name === productName;
+    });
+    if (!productExists) {
+        cart.push({ id: productId, name: productName, price: productPrice, image: productImage });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        actualizarBoton()
+    } else {
+        Swal.fire({
+            icon: 'success',
+            title: 'ADDED',
+            text: 'Ya se añadió al carrito',
+        });
+    }
+}
+
+function actualizarBoton() {
+    // agrupar todos los div de los productos
+    const agruparProductos = $('.product')
+    // console.log(agruparProductos.eq(1).data('id'))
+
+    // Obtener todos los objetos del LocalStorage
+    const objects = JSON.parse(localStorage.getItem("cart"));
+
+    // Recorrer los objetos y buscar el que tenga el nombre "Leche"
+    let objetoEncontrado;
+    for (let i = 1; i <= objects.length + 1; i++) {
+
+        if (objects.find(obj => obj.id === `${i}`)) {
+            agruparProductos.eq(i - 1).find(".add-to-cart").text("Agregado")
+        }
+
+    }
+}
+actualizarBoton()
+
+
+// =============================================
+// =============================================
+
 // =============================================
 // CAMBIO DE COLOR DEL HEADER
 // =============================================
@@ -90,7 +141,3 @@ document.getElementById("miBoton").addEventListener("click", function () {
     boton.textContent = "¡ADDED!";
     boton.style.transition = "background-color 1s ease, color 1s ease";
 });
-
-
-
-

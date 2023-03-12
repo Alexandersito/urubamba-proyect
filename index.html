@@ -50,7 +50,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
+    <!-- SWEET ALERT -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.js"></script>
 
 </head>
 
@@ -1200,10 +1202,21 @@
 
     </footer>
 
-
-
+    <div class="product" id="1" data-id="1">
+        <img src="https://via.placeholder.com/150" alt="Producto 1">
+        <h2>Producto 1</h2>
+        <p class="price">$10.99</p>
+        <button class="add-to-cart" onclick="addToCart('1')">Agregar al carrito</button>
+    </div>
+    <div class="product" id="2" data-id="2">
+        <img src="https://via.placeholder.com/150" alt="Producto 2">
+        <h2>Producto 2</h2>
+        <p class="price">$20.99</p>
+        <button class="add-to-cart" onclick="addToCart('2')">Agregar al carrito</button>
+    </div>
+    
     <script src="js/script.js"></script>
-    <script src="js/carrito.js"></script>
+    <!-- <script src="js/carrito.js"></script> -->
 
 </body>
 
