@@ -3,7 +3,7 @@ const carrito = document.getElementById('carrito');
 const productos = document.getElementById('lista-productos');
 const productosTop = document.getElementById('lista-productosTop');
 const product = document.getElementById('prom');
-const listaProductos = document.querySelector('#lista-carrito tbody');
+
 const updates = $('.agregar-carrito');
 
 actualizarIconos();
@@ -11,19 +11,19 @@ actualizarBoton();
 setInterval(actualizarIconos, 50);
 setInterval(actualizarBoton, 50);
 
-$(document).on("click", ".agregar-carrito", function(e) {
+$(document).on("click", ".agregar-carrito", function (e) {
     const carro = new Carrito();
     carro.comprarProducto(e);
     actualizarPrecio();
 })
 
-$(document).on("click", ".borrar-producto", function(e) {
+$(document).on("click", ".borrar-producto", function (e) {
     const carro = new Carrito();
     carro.eliminarProducto(e);
     actualizarPrecio();
 })
 
-$(".agregar-carrito-info").click(function(e) {
+$(".agregar-carrito-info").click(function (e) {
     const carro = new Carrito();
     carro.comprarProductor(e);
     actualizarPrecio();

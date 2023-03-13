@@ -58,7 +58,10 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!--=======================================================================================================================================-->
+    <!--HEADER - CABECERA-->
+    <!--=======================================================================================================================================-->
+    
     <div class="container-fluid header-principal  headersito">
         <div class="container px-0 ">
             <div class="grid-header">
@@ -80,30 +83,24 @@
 
                 <!-- BOTON TOP TOURS -->
                 <div class="item-header agora text-center d-none d-sm-block">
-                    <a href="#top">
-                        <button type="button" class="btn btn-dark fuente1 ">Top Tours</button>
-                    </a>
+                    <button type="button" class="btn btn-dark fuente1 " onclick="scrollToElement('top')">Top Tours</button>
                 </div>
 
                 <!-- BOTON SPECIALS -->
                 <div class="item-header agora text-center d-none d-sm-block">
-                    <a href="#specials">
-                        <button type="button" class="btn btn-dark fuente1 ">SPECIALS</button>
-                    </a>
+                    <button type="button" class="btn btn-dark fuente1 " onclick="scrollToElement('specials')">SPECIALS</button>
                 </div>
 
                 <!-- BOTON  TESTIMONIALS-->
                 <div class="item-header agora text-center d-none d-sm-block">
-                    <a href="#testimonials">
-                        <button type="button" class="btn btn-dark fuente1 ">TESTIMONIALS</button>
-                    </a>
+                    <button type="button" class="btn btn-dark fuente1" onclick="scrollToElement('testimonials')">TESTIMONIALS</button>
                 </div>
 
                 <!-- BOTON DE CARRITO DE COMPRAS -->
                 <div class="item-header text-center d-none d-sm-block">
                     <a href="./html/carrito.html">
                         <button type="button" class="animated btn btn-dark fuente1 px-3" style="position: relative;">
-                            <span class="fuente4 mt-1 mr-1 rounded-circle px-1" style="position: absolute;top: 0;right: 0;background-color: rgb(255, 0, 179);font-size: 12px;">10</span>
+                            <span class="fuente4 mt-1 mr-1 rounded-circle px-1 cantidad-carrito" style="position: absolute;top: 0;right: 0;background-color: rgb(255, 0, 179);font-size: 12px;"></span>
                             <i class="fi-rr-shopping-cart" style="font-size: 30px;"></i>
                         </button>
                     </a>
@@ -121,7 +118,7 @@
 
                 <!-- BOTON DE MENU -->
                 <div class="item-header agora ">
-                    <a href="#menu" style="text-decoration: none;"><i class="fas fa-bars raton menu"></i></a>
+                    <i class="fas fa-bars raton menu" onclick="scrollToElement('menu')"></i>
                 </div>
             </div>
 
@@ -256,7 +253,9 @@
         </div>
     </div>
 
-    <!-- MENU CENTRADO CENTER -->
+    <!--=======================================================================================================================================-->
+    <!--SECCIONMENU-->
+    <!--=======================================================================================================================================-->
     <div name="menu" id="menu" class="container-fluid  img-fluid" style="background-image: url(img/menu.jpg);background-size: cover;background-position: center center;">
         <div class="container sobre-llamita " style="background-color: rgba(0%, 0%, 0%, 50%);">
 
@@ -344,7 +343,9 @@
         </div>
     </div>
 
-    <!-- TOP TOURS -->
+    <!--=======================================================================================================================================-->
+    <!--TOP TOURS-->
+    <!--=======================================================================================================================================-->
     <div name="top" id="top" class="container-fluid px-0 pt-3 pb-3" style="background-color: rgba(0%, 0%, 0%, 2%);">
 
         <div class="container px-0">
@@ -356,18 +357,18 @@
                 <div class="primer-top">
 
                     <!-- PRIMER TOP -->
-                    <div class="item-top top1" style="background-image: linear-gradient(
+                    <div class="item-top top1 product" id="1" style="background-image: linear-gradient(
                         rgba(0, 0, 0, 0.1),
                         rgba(0, 0, 0, 0.2)
                       ), url(img/top1.jpg);position: relative;">
 
                         <div class="info-especial p-2">
 
-                            <p class=" m-0 fuente4">Lugar numero 1</p>
+                            <p class="m-0 fuente4 nombre-tour">Lugar numero 1</p>
 
                             <div class=" d-flex">
                                 <i class=" p-1 far fa-clock"></i>
-                                <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                                <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">1</span> Day</p>
                                 <i class="p-1 far fa-user"></i>
                                 <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                             </div>
@@ -378,7 +379,7 @@
                                 </a>
                                 <div class="d-flex flex-column">
                                     <div class="d-flex">
-                                        <p class="m-0 fuente4">From 400</p>
+                                        <p class="m-0 fuente4">From <span class="price">400</span></p>
                                         <i class="p-1 fas fa-dollar-sign"></i>
                                     </div>
 
@@ -391,7 +392,8 @@
                                     </div>
                                 </div>
 
-                                <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                                <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('1')" data-id="1"></i>
 
                             </div>
 
@@ -400,18 +402,18 @@
                     </div>
 
                     <!-- SEGUNDO TOP -->
-                    <div class="item-top top2" style="background-image: linear-gradient(
+                    <div class="item-top top2 product" id="2" style="background-image: linear-gradient(
                         rgba(0, 0, 0, 0.1),
                         rgba(0, 0, 0, 0.2)
                       ), url(img/top2.png);position: relative;">
 
                         <div class="info-especial p-2">
 
-                            <p class=" m-0 fuente4">Lugar numero 2</p>
+                            <p class=" m-0 fuente4 nombre-tour">Lugar numero 2</p>
 
                             <div class=" d-flex">
                                 <i class=" p-1 far fa-clock"></i>
-                                <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                                <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">2</span> Day</p>
                                 <i class="p-1 far fa-user"></i>
                                 <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                             </div>
@@ -422,7 +424,7 @@
                                 </a>
                                 <div class="d-flex flex-column">
                                     <div class="d-flex">
-                                        <p class="m-0 fuente4">From 400</p>
+                                        <p class="m-0 fuente4">From <span class="price">400</span></p>
                                         <i class="p-1 fas fa-dollar-sign"></i>
                                     </div>
 
@@ -435,7 +437,8 @@
                                     </div>
                                 </div>
 
-                                <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                                <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('2')" data-id="2"></i>
 
                             </div>
 
@@ -448,18 +451,18 @@
                 <div class="second-top">
 
                     <!-- TERCER TOP -->
-                    <div class="item-top top3" style="background-image: linear-gradient(
+                    <div class="item-top top3 product" id="3" style="background-image: linear-gradient(
                         rgba(0, 0, 0, 0.1),
                         rgba(0, 0, 0, 0.2)
                       ), url(img/top3.png);position: relative;">
 
                         <div class="info-especial p-2">
 
-                            <p class=" m-0 fuente4">Lugar numero 3</p>
+                            <p class=" m-0 fuente4 nombre-tour">Lugar numero 3</p>
 
                             <div class=" d-flex">
                                 <i class=" p-1 far fa-clock"></i>
-                                <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                                <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">3</span> Day</p>
                                 <i class="p-1 far fa-user"></i>
                                 <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                             </div>
@@ -470,7 +473,7 @@
                                 </a>
                                 <div class="d-flex flex-column">
                                     <div class="d-flex">
-                                        <p class="m-0 fuente4">From 400</p>
+                                        <p class="m-0 fuente4">From <span class="price">400</span></p>
                                         <i class="p-1 fas fa-dollar-sign"></i>
                                     </div>
 
@@ -483,7 +486,8 @@
                                     </div>
                                 </div>
 
-                                <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                                <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('3')" data-id="3"></i>
 
                             </div>
 
@@ -492,18 +496,18 @@
                     </div>
 
                     <!-- CUARTO TOP -->
-                    <div class="item-top top4" style="background-image: linear-gradient(
+                    <div class="item-top top4 product" id="4" style="background-image: linear-gradient(
                         rgba(0, 0, 0, 0.1),
                         rgba(0, 0, 0, 0.2)
                       ), url(img/top4.jpg);position: relative;">
 
                         <div class="info-especial p-2">
 
-                            <p class=" m-0 fuente4">Lugar numero 4</p>
+                            <p class=" m-0 fuente4 nombre-tour">Lugar numero 4</p>
 
                             <div class=" d-flex">
                                 <i class=" p-1 far fa-clock"></i>
-                                <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                                <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                                 <i class="p-1 far fa-user"></i>
                                 <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                             </div>
@@ -514,7 +518,7 @@
                                 </a>
                                 <div class="d-flex flex-column">
                                     <div class="d-flex">
-                                        <p class="m-0 fuente4">From 400</p>
+                                        <p class="m-0 fuente4">From <span class="price">400</span></p>
                                         <i class="p-1 fas fa-dollar-sign"></i>
                                     </div>
 
@@ -527,7 +531,8 @@
                                     </div>
                                 </div>
 
-                                <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                                <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('4')" data-id="4"></i>
 
                             </div>
 
@@ -543,18 +548,18 @@
             <div class="d-sm-flex ">
 
                 <!-- PRIMER SOBTOP -->
-                <div class="subtop subtop1" style="background-image: linear-gradient(
+                <div class="subtop subtop1 product" id="5" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ), url(img/top5.jpg);position: relative;">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Lugar numero 5</p>
+                        <p class=" m-0 fuente4 nombre-tour">Lugar numero 5</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -565,7 +570,7 @@
                                 </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -578,7 +583,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('5')" data-id="5"></i>
 
                         </div>
 
@@ -587,18 +593,18 @@
                 </div>
 
                 <!-- SEGUNDO SOBTOP -->
-                <div class="subtop subtop2" style="background-image: linear-gradient(
+                <div class="subtop subtop2 product" id="6" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ), url(img/top6.jpg);position: relative;">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Lugar numero 6</p>
+                        <p class=" m-0 fuente4 nombre-tour">Lugar numero 6</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -609,7 +615,7 @@
                                 </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -622,7 +628,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('6')" data-id="6"></i>
 
                         </div>
 
@@ -643,25 +650,27 @@
         </div>
     </div>
 
-    <!-- ESPECIALS -->
+    <!--=======================================================================================================================================-->
+    <!--ESPECIALS TOURS-->
+    <!--=======================================================================================================================================-->
     <div id="specials" class="container-fluid  py-2" style="background-color: rgba(0%, 0%, 0%, 2%);">
         <div class="container px-0">
 
             <div class="grid-especial">
 
                 <!-- ESPECIAL 1 -->
-                <div class="item-especial panorama" style="background-image: linear-gradient(
+                <div class="item-especial panorama product" id="7" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ),url(img/especial1.png);">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Especial 1</p>
+                        <p class=" m-0 fuente4 nombre-tour">Especial 1</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -672,7 +681,7 @@
                             </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -685,7 +694,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('7')" data-id="7"></i>
 
                         </div>
 
@@ -694,18 +704,18 @@
                 </div>
 
                 <!-- ESPECIAL 2 -->
-                <div class="item-especial panorama" style="background-image: linear-gradient(
+                <div class="item-especial panorama product" id="8" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ),url(img/especial2.png);">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Especial 2</p>
+                        <p class=" m-0 fuente4 nombre-tour">Especial 2</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -716,7 +726,7 @@
                             </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -729,7 +739,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('8')" data-id="8"></i>
 
                         </div>
 
@@ -738,18 +749,18 @@
                 </div>
 
                 <!-- ESPECIAL 3 -->
-                <div class="item-especial panorama" style="background-image: linear-gradient(
+                <div class="item-especial panorama product" id="9" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ),url(img/especial3.png);">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Especial 3</p>
+                        <p class=" m-0 fuente4 nombre-tour">Especial 3</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -760,7 +771,7 @@
                             </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -773,7 +784,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('9')" data-id="9"></i>
 
                         </div>
 
@@ -782,18 +794,18 @@
                 </div>
 
                 <!-- ESPECIAL 4 -->
-                <div class="item-especial panorama" style="background-image: linear-gradient(
+                <div class="item-especial panorama product" id="10" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ),url(img/especial4.png);">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Especial 4</p>
+                        <p class=" m-0 fuente4 nombre-tour">Especial 4</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -804,7 +816,7 @@
                             </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -817,7 +829,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('10')" data-id="10"></i>
 
                         </div>
 
@@ -826,18 +839,18 @@
                 </div>
 
                 <!-- ESPECIAL 5 -->
-                <div class="item-especial panorama" style="background-image: linear-gradient(
+                <div class="item-especial panorama product" id="11" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ),url(img/especial5.png);">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Especial 5</p>
+                        <p class=" m-0 fuente4 nombre-tour">Especial 5</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -848,7 +861,7 @@
                             </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -861,7 +874,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('11')" data-id="11"></i>
 
                         </div>
 
@@ -870,18 +884,18 @@
                 </div>
 
                 <!-- ESPECIAL 6 -->
-                <div class="item-especial panorama" style="background-image: linear-gradient(
+                <div class="item-especial panorama product" id="12" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ),url(img/especial6.png);">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Especial 6</p>
+                        <p class=" m-0 fuente4 nombre-tour">Especial 6</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -892,7 +906,7 @@
                             </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -905,7 +919,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('12')" data-id="12"></i>
 
                         </div>
 
@@ -914,18 +929,18 @@
                 </div>
 
                 <!-- ESPECIAL 7 -->
-                <div class="item-especial panorama" style="background-image: linear-gradient(
+                <div class="item-especial panorama product" id="13" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ),url(img/especial7.png);">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Especial 7</p>
+                        <p class=" m-0 fuente4 nombre-tour">Especial 7</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -936,7 +951,7 @@
                             </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -949,7 +964,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('13')" data-id="13"></i>
 
                         </div>
 
@@ -958,18 +974,18 @@
                 </div>
 
                 <!-- ESPECIAL 8 -->
-                <div class="item-especial panorama" style="background-image: linear-gradient(
+                <div class="item-especial panorama product" id="14" style="background-image: linear-gradient(
                     rgba(0, 0, 0, 0.1),
                     rgba(0, 0, 0, 0.2)
                   ),url(img/especial8.png);">
 
                     <div class="info-especial p-2">
 
-                        <p class=" m-0 fuente4">Especial 8</p>
+                        <p class=" m-0 fuente4 nombre-tour">Especial 8</p>
 
                         <div class=" d-flex">
                             <i class=" p-1 far fa-clock"></i>
-                            <p class=" fuente4 p-0 m-0 mr-3">1 Day</p>
+                            <p class=" fuente4 p-0 m-0 mr-3"><span class="dias">4</span> Day</p>
                             <i class="p-1 far fa-user"></i>
                             <p class=" fuente4 p-0 m-0">Min. 2 persons</p>
                         </div>
@@ -980,7 +996,7 @@
                             </a>
                             <div class="d-flex flex-column">
                                 <div class="d-flex">
-                                    <p class="m-0 fuente4">From 400</p>
+                                    <p class="m-0 fuente4">From <span class="price">400</span></p>
                                     <i class="p-1 fas fa-dollar-sign"></i>
                                 </div>
 
@@ -993,7 +1009,8 @@
                                 </div>
                             </div>
 
-                            <i class="ml-2 mt-2 fas  fa-plus-circle" style="font-size: 25px;cursor: pointer;color: #ffffff;"></i>
+                            <i class="ml-2 mt-2 fa-sharp fa-solid fa-plus add-to-cart" style="font-size: 25px;cursor: pointer;color: #ffffff;"
+                                onclick="addToCart('14')" data-id="14"></i>
 
                         </div>
 
@@ -1013,7 +1030,9 @@
         </div>
     </div>
 
-    <!-- TESTIMONIALS -->
+    <!--=======================================================================================================================================-->
+    <!--SECCION TESTIMONIOS-->
+    <!--=======================================================================================================================================-->
     <div id="testimonials" class="container-fluid pt-3">
         <div class="container p-0">
             <div class="grid-testimonials">
@@ -1201,20 +1220,10 @@
         <h5 class="fuente1" style="color: white;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);"> Copyright Ⓒ 2021 Urubamba Tours. Developed by Alexander Saavedra</h5>
 
     </footer>
-
-    <div class="product" id="1" data-id="1">
-        <img src="https://via.placeholder.com/150" alt="Producto 1">
-        <h2>Producto 1</h2>
-        <p class="price">$10.99</p>
-        <button class="add-to-cart" onclick="addToCart('1')">Agregar al carrito</button>
-    </div>
-    <div class="product" id="2" data-id="2">
-        <img src="https://via.placeholder.com/150" alt="Producto 2">
-        <h2>Producto 2</h2>
-        <p class="price">$20.99</p>
-        <button class="add-to-cart" onclick="addToCart('2')">Agregar al carrito</button>
-    </div>
     
+    <!--=============================================-->
+    <!--ENLACES CON JAVA SCRIPT-->
+    <!--=============================================-->
     <script src="js/script.js"></script>
     <!-- <script src="js/carrito.js"></script> -->
 

@@ -1172,7 +1172,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* ========================================== */
-.product {
+/* .product {
   border: 1px solid #ccc;
   padding: 10px;
   margin: 10px;
@@ -1205,5 +1205,44 @@ body::-webkit-scrollbar-thumb {
   font-size: 16px;
   margin-top: 10px;
   cursor: pointer;
+} */
+
+/*=============================================*/
+/*TEMBLOR ANIMATION*/
+/*=============================================*/
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  10% {
+    transform: translate(-5px, 0) rotate(-5deg);
+  }
+  20% {
+    transform: translate(5px, 0) rotate(5deg);
+  }
+  30% {
+    transform: translate(-5px, 0) rotate(-5deg);
+  }
+  40% {
+    transform: translate(5px, 0) rotate(5deg);
+  }
+  50% {
+    transform: translate(-5px, 0) rotate(-5deg);
+  }
+  60% {
+    transform: translate(5px, 0) rotate(5deg);
+  }
+  70% {
+    transform: translate(-5px, 0) rotate(-5deg);
+  }
+  80% {
+    transform: translate(5px, 0) rotate(5deg);
+  }
+  90% {
+    transform: translate(-5px, 0) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
 
