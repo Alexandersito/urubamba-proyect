@@ -21,176 +21,225 @@ $(window).scroll(function (event) {
 });
 
 //=======================================================================================================================================
-//CARRITO DE COMPRAS CON LOCAL STORAGE
+//NUEVO CARRITO DE COMPRAS
 //=======================================================================================================================================
+// Busca todos los elementos con la clase 'add-to-cart'
+const addToCartBtns = document.querySelectorAll('.add-to-cart');
+// Seleccionar la tabla
+const tbody = document.querySelector('#lista-carrito tbody');
 
-//========================================
-//AGREGADO PRODUCTOS AL LOCAL STORAGE
-//========================================
-function addToCart(productId) {
-    var product = document.getElementById(productId);
-    var productName = product.querySelector('.nombre-tour').innerText;
-    var productPrice = product.querySelector('.price').innerText;
-    var productDias = product.querySelector('.dias').innerText;
+function obtenerContador() {
+    // Recuperar los datos del carrito del local storage
+    const objects = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    // capturar la ruta de la imagen
-    var styleString = product.getAttribute('style');
-    var backgroundImage = styleString.match(/url\(\s*([^)]+)\)/)[1];
+    return objects.length
+}
 
-    var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    // Verificar si el producto ya existe en el carrito
-    var productExists = carrito.some(function (item) {
-        return item.name === productName;
-    });
-    if (!productExists) {
-        carrito.push({ id: productId, name: productName, price: productPrice, dias: productDias, image: backgroundImage });
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-        actualizarBoton()
+function actualizarContador() {
+    if (obtenerContador() == 0) {
+        $(".cantidad-carrito").text("")
     } else {
-        Swal.fire({
-            icon: 'success',
-            title: 'ADDED',
-            text: 'Ya se añadió al carrito',
-        });
+        $(".cantidad-carrito").text(obtenerContador())
     }
 }
 
+function obtenerDatosLocalStorage() {
+    // Recuperar los datos del carrito del local storage
+    const objects = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    return objects
+}
+
 //========================================
-//CAMBIANDO ESTADO DE BOTONES (AGREGADO)
+//AGREGAR PRODUCTO
 //========================================
-function actualizarBoton() {
-    // agrupar todos los div de los productos
-    const agruparBotones = $('.add-to-cart')
 
-    // Obtener todos los objetos del LocalStorage
-    const objects = JSON.parse(localStorage.getItem("carrito"));
+// Agrega un event listener a cada botón
+addToCartBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
 
-    if (Array.isArray(objects)) {
+        const product = btn.closest('.product');
+        const productID = btn.getAttribute('data-id');
+        const productName = product.querySelector('.nombre-tour').textContent;
+        const productDays = product.querySelector('.dias').textContent;
+        const productPrice = product.querySelector('.price').textContent;
 
-        // Actualizar contador del carrito
-        const cantidadCarrito = document.querySelector('.cantidad-carrito');
-        if (objects.length == 0) {
-            cantidadCarrito.textContent = ""
+        // capturar la ruta de la imagen
+        var styleString = product.getAttribute('style');
+        // var backgroundImage = styleString.match(/url\(\s*([^)]+)\)/)[1];
+
+        // Buscar la URL de la imagen de fondo usando una expresión regular
+        const urlMatch = styleString.match(/url\(['"]?(?:\.\.\/)*([^'"]+)['"]?\)/);
+
+        // Obtener la ruta de la imagen de fondo
+        const backgroundImage = urlMatch ? urlMatch[1] : null;
+
+        // Crear el objeto del producto
+        const newProduct = {
+            id: productID,
+            name: productName,
+            days: productDays,
+            price: productPrice,
+            image: backgroundImage
+        };
+
+        // Obtener el carrito del Local Storage
+        let cart = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        // Verificar si el producto ya se encuentra en el carrito
+        const existingProductIndex = cart.findIndex(item => item.id === newProduct.id);
+        if (existingProductIndex > -1) {
+            // El producto ya existe en el carrito, no se agrega de nuevo
+            Swal.fire({
+                icon: 'success',
+                title: 'ADDED!',
+                text: 'Este producto ya está en el carrito',
+            });
         } else {
-            cantidadCarrito.textContent = objects.length;
-        }
+            // Agregar el nuevo producto al carrito
+            cart.push(newProduct);
 
-        for (let i = 0; i < objects.length; i++) {
+            // Actualizar el Local Storage con el nuevo carrito
+            localStorage.setItem('carrito', JSON.stringify(cart));
 
-            for (let j = 0; j < agruparBotones.length; j++) {
+            // Actualiza el icono de agregar al carrito
+            btn.classList.remove('fa-plus');
+            btn.classList.add('fa-check');
+            btn.style.color = "#25D366";
+            //Actualiza el contador
+            actualizarContador()
 
-                if (objects[i].id == agruparBotones[j].getAttribute("data-id")) {
-                    var ancho = agruparBotones[j].offsetWidth
-                    agruparBotones[j].style.transition = "1s all";
-                    agruparBotones[j].style.animation = "shake 1s";
-                    agruparBotones[j].classList.remove('fa-plus');
-                    agruparBotones[j].classList.add('fa-check');
-                    agruparBotones[j].style.color = "#25D366";
-                    agruparBotones[j].style.width = ancho + "px"
-                }
+            if (tbody != null) {
+                construirCarrito();
+            } else {
+                console.log("aqui no hay tabla")
             }
+
         }
-    } else {
-        console.log("localstorage empty")
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    actualizarBoton();
-});
-
-//========================================
-//INSERTAR DEL LOCALSTORAGE AL CARRITO (HTML)
-//========================================
-
-// Obteniendo la tabla
-const listaProductos = document.querySelector('#lista-carrito tbody');
-
-function insertandoAlCarrito() {
-    // Obtener todos los objetos del LocalStorage
-    const objects = JSON.parse(localStorage.getItem("carrito"));
-
-    if (Array.isArray(objects)) {
-        let lastIndex = listaProductos.rows.length - 1; // índice del último elemento que se agregó a la tabla
-
-        // Agregar solo los elementos que no se han agregado previamente
-        for (let i = lastIndex + 1; i < objects.length; i++) {
-            //Construir plantilla
-            const row = document.createElement("tr");
-            row.innerHTML = `
-      <td class="py-2 px-1" style="text-align: center;">
-          <div style="display: inline-block; text-align: center; background-image: url(../${objects[i].image}); width: 60px; height: 60px; background-size: cover; background-position: center center; border-radius: 8px; box-shadow: 5px 5px 5px #8d8d8d;">
-          </div>
-      </td>
-
-      <td class="fuente6" style="position: relative;">
-          <p class="p-0 m-0 fuente6 absolute centrado text-center" style="font-size: 13px;">${objects[i].name}</p>
-      </td>
-
-      <td class="relative fuente6">
-          <p class="absolute centrado fuente6" style="font-size: 13px;">${objects[i].dias}</p>
-      </td>
-
-      <td class="relative fuente6">
-          <p class="absolute centrado fuente6" style="font-size: 13px;">${objects[i].price}$</p>
-      </td>
-
-      <td class="relative">
-          <a href="" data-id="${objects[i].id}" class="borrar-producto fas fa-trash-alt absolute centrado btn btn-danger py-1 px-2" style="text-decoration: none;font-size: 15px;">
-          </a>
-      </td>
-      `;
-
-            listaProductos.appendChild(row);
-        }
-
-        // Actualizar el valor de lastIndex
-        lastIndex = objects.length - 1;
-    } else {
-        console.log("localstorage empty")
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    insertandoAlCarrito()
-
-    //========================================
-    //ELIMINANDO UN ELEMENTO DEL CARRITO Y DEL LOCAL STORAGE
-    //========================================
-
-    // Obtener todos los elementos con la clase .borrar-producto
-    const botonesBorrar = document.querySelectorAll('.borrar-producto');
-
-    // Iterar por todos los elementos y agregar un evento click
-    botonesBorrar.forEach(boton => {
-        boton.addEventListener('click', e => {
-            // Prevenir el comportamiento por defecto del enlace
-            e.preventDefault();
-
-            // Obtener el valor del atributo data-id
-            const dataId = boton.getAttribute('data-id');
-
-            // Obtener el array de objetos almacenados en el localStorage
-            const objetos = JSON.parse(localStorage.getItem('carrito'));
-
-            // Encontrar el objeto que se desea eliminar y obtener su índice en el array
-            const indiceAEliminar = objetos.findIndex(obj => obj.id === dataId);
-
-            // Verificar si se encontró el objeto y eliminarlo del array
-            if (indiceAEliminar !== -1) {
-                objetos.splice(indiceAEliminar, 1);
-
-                // Actualizar el localStorage con el nuevo array sin el objeto eliminado
-                localStorage.setItem('carrito', JSON.stringify(objetos));
-
-                const fila = boton.closest('tr');
-                fila.remove();
-            }
-        });
     });
 });
+
+//========================================
+//EJECUTAR AL CARGAR PAGINA
+//========================================
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Actualizar contador
+    actualizarContador()
+    //Actualizar Iconos
+    actualizarIconos()
+
+});
+
+//========================================
+//ACTUALIZAR ICONOS - ESTADOS 
+//========================================
+function actualizarIconos() {
+    // Busca todos los elementos con la clase 'add-to-cart'
+    const addToCartBtns = document.querySelectorAll('.add-to-cart');
+
+    // Recuperar los datos del carrito del local storage
+    const objects = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Función que busca un objeto en la lista por el ID
+    function getObjectById(id) {
+        return objects.find((obj) => obj.id === id);
+    }
+
+    // Recorre los botones y cambia el estado si el producto ya está en el carrito
+    addToCartBtns.forEach(function (btn) {
+        const productId = btn.getAttribute('data-id');
+        console.log(btn.getAttribute('data-id'))
+
+        // Verificar si el producto ya está en el carrito
+        const obj = getObjectById(productId);
+        if (obj) {
+            // Cambiar el icono a un checkmark y el color a verde
+            btn.classList.remove('fa-plus');
+            btn.classList.add('fa-check');
+            btn.style.color = "#25D366";
+        } else {
+            // Cambiar el icono a un plus y el color a blanco
+            btn.classList.remove('fa-check');
+            btn.classList.add('fa-plus');
+            btn.style.color = "white";
+        }
+    });
+}
+
+//========================================
+//CONSTRUIR CARRITO
+//========================================
+function construirCarrito() {
+    const contador = obtenerContador();
+    const objects = obtenerDatosLocalStorage();
+
+    for (let i = 0; i < contador; i++) {
+        const id = objects[i].id;
+
+        // Verificar si el producto ya está en la tabla
+        const filaExistente = tbody.querySelector(`tr[data-id="${id}"]`);
+
+        if (filaExistente) {
+            // Actualizar la cantidad y el precio total en la fila existente
+            console.log("Ya esta")
+        } else {
+            // Crear una nueva fila en la tabla
+            const fila = document.createElement('tr');
+            fila.setAttribute('data-id', id);
+
+            // Agregar el contenido de cada celda usando la estructura que mencionaste
+            fila.innerHTML = `
+                <td class="py-2 px-1" style="text-align: center;">
+                    <div class="tiembla raton" style="display: inline-block; text-align: center; background-image: url(../${objects[i].image}); width: 60px; height: 60px; background-size: cover; background-position: center center; border-radius: 8px; box-shadow: 5px 5px 5px #8d8d8d;"></div>
+                </td>
+                <td class="fuente6" style="position: relative;">
+                    <p class="p-0 m-0 fuente6 absolute centrado text-center" style="font-size: 13px;">${objects[i].name}</p>
+                </td>
+                <td class="relative fuente6">
+                    <p class="absolute centrado fuente6" style="font-size: 13px;">${objects[i].days}</p>
+                </td>
+                <td class="relative fuente6">
+                    <p class="absolute centrado fuente6" style="font-size: 13px;">$${objects[i].price}</p>
+                </td>
+                <td style="text-align: center;vertical-align: middle;height: 100%;">
+                    <i data-id="${id}" class="borrar-producto fas fa-trash-alt  btn btn-danger py-1 px-2 tiembla" style="text-decoration: none;font-size: 15px;display: inline-block;line-height: inherit;"></i>
+                </td>
+            `;
+
+            // Agregar la fila a la tabla
+            tbody.appendChild(fila);
+        }
+    }
+}
+construirCarrito();
+
+//========================================
+//ELIMINAR PRODUCTO
+//========================================
+// Agregar event listener a la tabla para detectar clics en botones de eliminar
+tbody.addEventListener('click', (e) => {
+    if (e.target.classList.contains('borrar-producto')) {
+
+        e.preventDefault();
+
+        // Obtener id del producto
+        const id = e.target.getAttribute('data-id');
+
+        // Buscar y eliminar elemento del local storage con ese id
+        let objects = obtenerDatosLocalStorage();
+        objects = objects.filter(item => item.id !== id);
+        localStorage.setItem('carrito', JSON.stringify(objects));
+
+        // Eliminar fila correspondiente de la tabla
+        const fila = e.target.parentElement.parentElement;
+        tbody.removeChild(fila);
+
+        actualizarIconos()
+    }
+});
+
+
 
 //=======================================================================================================================================
 //ANCLAS 2.0
